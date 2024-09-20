@@ -25,52 +25,38 @@
 // }
 
 function mudarfotosProdutos() {
-    let classfotos = document.querySelectorAll(".jss87");
-    // classfotos.forEach(src =>{
-    //     src.textContent = "https://i.imgur.com/mFvYSE5.png"
-    // })
+    let classfotos = document.querySelectorAll(".img");
+
     for (let i = 0; i < classfotos.length; i++) {
+        // classfotos[i].style.borderRadius = "30px";
         classfotos[i].src = "https://i.imgur.com/mFvYSE5.png";
     }
 }
 
 
 function nomesProdutos(){
-    let nomes = document.querySelectorAll(".MuiTypography-root.jss102.jss103.MuiTypography-h6");
+    let nomes = document.querySelectorAll(".sc-d79c9c3f-0.nlmfp.sc-bfd00172-15.gwOrwq.nameCard");
 
-    nomes.forEach(innerHTML =>{
-        console.log(innerHTML.textContent)
-    })
-
-    // for (let i = 0; i < nomes.length; i++) {
-    //     console.log(nomes[i].innerHTML)
-    // }
+    for (let i = 0; i < nomes.length; i++) {
+        console.log(nomes[i].innerHTML)
+    }
 }
 
 
 function valoresProdutos(){
     let soma = 0
-    let valores = document.querySelectorAll(".jss133");
+    let valores = document.querySelectorAll(".sc-4a4c51d9-2.gAccCe.priceCard");
 
     valores.forEach(innerHTML => {
         console.log(innerHTML.textContent)
     })
 
     valores.forEach(innerHTML => {
-    let text = innerHTML.textContent.replace(/R\$/g, '')
-                                    .replace(/\./g, '')
-                                    .replace(',','.')
-                                    .trim();
+    let text = innerHTML.textContent.replace(/R\$/, '')
+                                             .replace('.', '')
+                                             .replace(',','.')
+                                             .trim();
     soma += parseFloat(text)
     });
-    // valores.forEach(innerHTML => {
-    //     // Substitui &nbsp; por um espaço normal
-    //     soma += parseFloat(innerHTML)
-    // });
-    // for (let i = 0; i < valores.length; i++) {
-    //     // console.log(valores[i].innerHTML)
-    //     // let jorge = parseFloat(valores[i].innerHTML)
-    //     soma += parseFloat(valores[i].innerHTML)
-    // }
     console.log("soma: " + soma.toFixed(2))
 }
